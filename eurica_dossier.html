@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Эврика — Личное дело</title>
+<style>
+:root{
+  --card:#ffffff;
+  --ink:#1b1b1b;
+  --ink-soft:#5a5a58;
+  --name:#a43c3f;
+  --hair:#d8d5cc;
+  --hair-strong:#b7b3a6;
+  --shard-red:#ff0c01;
+  --shard-green:#25a103;
+  --shard-orange:#ff9203;
+  --shard-amber:#fdb004;
+  --shard-cyan:#39d6e7;
+  --shard-blue:#3b7ff1;
+  --redact:#101010;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#e9e6dd;
+  font-family:'Georgia','Times New Roman',serif;
+  color:var(--ink);
+  padding:40px 16px;
+}
+.sheet{
+  max-width:900px;
+  margin:0 auto;
+  background:var(--card);
+  border:1px solid var(--hair-strong);
+}
+.header{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:22px 28px;
+  border-bottom:2px solid var(--ink);
+}
+.logo{
+  width:40px;height:40px;flex-shrink:0;
+}
+.title-block{flex:1}
+.eyebrow{
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:0 0 2px;
+}
+.name{
+  font-size:30px;
+  color:var(--name);
+  margin:0;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.subname{
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  color:var(--ink-soft);
+  margin:2px 0 0;
+}
+.body{display:flex}
+.portrait{
+  width:280px;flex-shrink:0;
+  border-right:1px solid var(--hair-strong);
+  padding:18px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.portrait-frame{
+  border:1px solid var(--hair-strong);
+  aspect-ratio:9/13;
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  font-family:Arial,sans-serif;font-size:12px;color:var(--ink-soft);
+  text-align:center;
+  background:repeating-linear-gradient(135deg,#f4f2ec,#f4f2ec 8px,#eeece4 8px,#eeece4 16px);
+}
+.portrait-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  display:block;
+}
+.quickfacts{font-family:Arial,sans-serif;font-size:12px}
+.quickfacts div{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dotted var(--hair-strong)}
+.quickfacts span:first-child{color:var(--ink-soft)}
+.main{flex:1;padding:18px 28px}
+.section{margin-bottom:22px}
+.section-head{
+  display:flex;align-items:baseline;gap:8px;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:4px;margin-bottom:8px;
+}
+.num{
+  font-family:Arial,sans-serif;font-weight:700;font-size:13px;color:var(--name);
+}
+.section-title{
+  font-family:Arial,sans-serif;font-weight:700;font-size:14px;
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.sub-title{font-family:Arial,sans-serif;font-weight:700;font-size:12px;margin:10px 0 3px;color:var(--ink-soft)}
+p{margin:0 0 8px;font-size:14px;line-height:1.55}
+.hint{
+  font-family:Arial,sans-serif;font-size:11px;color:var(--ink-soft);
+  font-style:italic;
+}
+.spoiler-wrap{
+  margin-top:10px;border:1px solid var(--hair-strong);
+}
+.spoiler-toggle{
+  width:100%;text-align:left;
+  background:var(--redact);color:#e9e6dd;
+  border:none;padding:9px 14px;
+  font-family:Arial,sans-serif;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;
+}
+.spoiler-toggle::before{content:"▸ ";}
+.spoiler-toggle.open::before{content:"▾ ";}
+.spoiler-body{
+  display:none;padding:14px 16px;background:#f7f5f0;
+}
+.spoiler-body.open{display:block}
+.spoiler-body a{
+  color:var(--name);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  word-break:break-all;
+}
+.tagline{
+  font-family:Arial,sans-serif;font-size:12px;color:var(--ink-soft);
+  padding:6px 0 0;
+}
+.footer{
+  padding:14px 28px;border-top:1px solid var(--hair-strong);
+  font-family:Arial,sans-serif;font-size:10px;color:var(--ink-soft);
+  display:flex;justify-content:space-between;
+}
+.gap{
+  border:1px dashed var(--name);
+  padding:8px 10px;font-family:Arial,sans-serif;font-size:12px;
+  color:var(--name);background:#fdf3f2;
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="header">
+    <svg class="logo" viewBox="0 0 256 256">
+      <polygon points="128,10 210,50 190,140 66,140 46,50" fill="var(--shard-orange)"/>
+      <polygon points="128,10 190,140 128,190 90,90" fill="var(--shard-amber)"/>
+      <polygon points="66,140 128,190 100,246 40,200" fill="var(--shard-red)"/>
+      <polygon points="190,140 128,190 156,246 216,200" fill="var(--shard-cyan)"/>
+      <polygon points="128,10 46,50 90,90" fill="var(--shard-green)"/>
+      <polygon points="128,190 90,90 66,140" fill="var(--shard-blue)"/>
+    </svg>
+    <div class="title-block">
+      <p class="eyebrow">The Ring — School of Futurism — Docent</p>
+      <p class="name">Эврика</p>
+      <p class="subname">Личное дело / персональная анкета</p>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="portrait">
+      <div class="portrait-frame">
+        <img src="Eurica.jpg" alt="Эврика.">
+      </div>
+      <div class="quickfacts">
+        <div><span>Возраст</span><span>32 Года.</span></div>
+        <div><span>Рост</span><span>239 СМ.</span></div>
+        <div><span>Телосложение</span><span>Практически Идеальное.</span></div>
+        <div><span>Ранг</span><span>Доцент.</span></div>
+        <div><span>Фракция</span><span>Безымянный Палец, Футуризм.</span></div>
+        <div><span>Грех</span><span>Гордыня, Чревоугодие.</span></div>
+      </div>
+    </div>
+
+    <div class="main">
+
+      <div class="section">
+        <div class="section-head"><span class="num">1</span><span class="section-title">Имя / Фамилия / Прозвище</span></div>
+        <p>Эврика. Фамилия и прозвище отсутствуют.</p>
+      </div>
+	  
+      <div class="section">
+        <div class="section-head"><span class="num">2</span><span class="section-title">Характер и психологический портрет</span></div>
+        <p class="sub-title">2.0 Характер</p>
+        <p>Девушка, совсем потерявшаяся в плане морали. Она уже давно ищет истинного вдохновения, попутно игнорируя любые нормы и устои. Она готова жертвовать как своими, так и чужими людьми без какого-либо проблеска совести. Ее, впринципе, можно полноценно назвать психопаткой. В большинстве своем, полагается на то чтобы повторять за тем что она видела раньше в качестве собственных эмоций, вместо того чтобы реально реагировать на ситуации.</p>
+		<p class="sub-title">2.1 Цели и амбиции</p>
+        <p>Желает получить личное признание как Маэстро от своего де-факто учителя, Генри. Становление Маэстро течения Футуризма.</p>
+        <p class="sub-title">2.2 Страхи и травмы</p>
+        <p>Разоблачение происхождения и ее истинного тела, возврат к бедности, потеря одобрения Генри.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><span class="num">3</span><span class="section-title">Навыки и недостатки</span></div>
+        <p class="sub-title">3.1 Навыки</p>
+		<p>Хирургия, манипуляция, мелкая маторика, боевые навыки подобающие кому-то ее уровня.</p>
+		<p class="sub-title">3.2 Плюсы</p>
+		<p>Имеет полностью протезированное тело. Это может быть как плюсом, так и минусом.</p>
+		<p>Имеет определенный опыт в боях.</p>
+		<p>Имеет средний авторитет среди Безымянного пальца.</p>
+		<p class="sub-title">3.3 Недостатки</p>
+		<p>Имеет полностью протезированное тело. Это может быть как плюсом, так и минусом.</p>
+		<p>Для ее ранга, в боях она излишне сильно полагается на своих дронов-помощников.</p>
+        <p>Несмотря на высокий социальный интеллект, ей довольно сложно реально понимать ситуации.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><span class="num">4</span><span class="section-title">Биография</span></div>
+        <p>Бедная девушка из закаулков корпорации M, с дества больная тяжелой болезнью, приянтой лишь под крыло одной из наиболее безчеловечных организаций города - Безымянного Пальца.</p>
+        <div class="spoiler-wrap">
+          <button class="spoiler-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Полная биография — содержит смерть, насилие</button>
+          <div class="spoiler-body">
+            <p><a href="https://docs.google.com/document/d/11b77TPTsfElnPI4dtOM5qjbwOhi7qITdP0rvlr0pBO0/edit?usp=sharing" target="_blank" rel="noopener">Открыть полную биографию (Google Docs)</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><span class="num">5</span><span class="section-title">Инвентарь и снаряжение</span></div>
+		        <p class="sub-title">5.0 Инвентарь</p>
+        <p>Набор для починки дронов, белый блокнот, хирургические инструменты, набор цветных ручек, одежда, 700к Ан в физической форме.</p>
+        <p class="sub-title">5.1 Аугментации</p>
+        <p>Полный комплект с бесплатным страховым покрытием в подарок "1967-Ourel". Особый комплект, имеющий полный набор органов-простетиков, ряд имплантов улучшающих простую и боевую жизнь. Так-же в набор включена система Skinweave, позволяющая сделать кожу насителя полностью прозрачной при желании, при этом не показывая внутрении органы; дроны-ассистенты (Очень базовый ИИ, подобный "Полуднитсе" Девятки), хирургический набор встроенный в руки (В первую очередь для экстремальных ситуаций, а не для постоянного использования).</p>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><span class="num">6</span><span class="section-title">Интересные факты</span></div>
+        <p>[опционально: голос/тема, мелкие привычки — например, регулярная порча белых плащей]</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>School of Futurism — The Ring</span>
+    <span>Hi!!! Hello!!!</span>
+  </div>
+
+</div>
+</body>
+</html>
